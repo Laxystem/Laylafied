@@ -1,5 +1,5 @@
 [![Layla's Website](https://raw.githubusercontent.com/Nu-Git/questionmark-badges/main/laxla-related/Laxla%20thing.svg)](https://layla.is-immensely.gay/)
-## Minecraft: Laylafied
+# Minecraft: Laylafied
 [![Quilt](https://github.com/intergrav/devins-badges/raw/v3/assets/cozy/supported/quilt_vector.svg)](https://quiltmc.org/en/install/)
 [![Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/laylafied)
 [![Modrinth Gallery](https://github.com/intergrav/devins-badges/raw/v3/assets/cozy/documentation/modrinth-gallery_vector.svg)](https://modrinth.com/mod/laylafied/gallery)
