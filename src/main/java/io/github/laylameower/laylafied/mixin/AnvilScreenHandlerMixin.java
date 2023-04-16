@@ -8,7 +8,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static io.github.laylameower.laylafied.LaylafiedMod.LOGGER;
 import static io.github.laylameower.laylafied.utils.Utilities.addComboEnchantmentsTo;
 
 @Mixin(AnvilScreenHandler.class)
@@ -19,8 +18,6 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 		val itemStack = output.getStack(0);
 
 		if (itemStack.isEmpty() || !itemStack.hasEnchantments()) return;
-
-		LOGGER.debug("Injecting into anvil enchanting on item [{}]", itemStack.getName().getString());
 
 		addComboEnchantmentsTo(itemStack);
 	}

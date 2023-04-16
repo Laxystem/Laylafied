@@ -35,6 +35,5 @@ object LaylafiedMod : ModInitializer {
         register("dragon_scales", DRAGON_SCALES)
         register("frozen_cloth", FROZEN_CLOTH)
         register("soul_tear", SOUL_TEAR)
-        LOGGER.debug("EnchantmentTarget interfaces: {}", EnchantmentTarget::class.java.interfaces.toString())
     }
 }

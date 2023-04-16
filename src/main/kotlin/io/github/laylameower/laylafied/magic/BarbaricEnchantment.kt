@@ -1,6 +1,5 @@
 package io.github.laylameower.laylafied.magic
 
-import io.github.laylameower.laylafied.LaylafiedMod.LOGGER
 import io.github.laylameower.laylafied.utils.MAIN_HAND
 import net.minecraft.enchantment.Enchantment
 import net.minecraft.enchantment.EnchantmentTarget
@@ -26,28 +25,12 @@ class BarbaricEnchantment : Enchantment(Rarity.RARE, EnchantmentTarget.WEAPON, M
     override fun onTargetDamaged(user: LivingEntity, target: Entity, level: Int) {
         val item = user.getStackInHand(Hand.MAIN_HAND)
 
-        if (item.damage == 0) {
-            LOGGER.debug(
-                "[{}] has failed to use the barbaric soul against [{}]... The soul feels safe, as its weapon is not damaged!",
-                user.name.string,
-                target.name.string
-            )
-            return
-        }
+        if (item.damage == 0) return
 
         val damage = item.maxDamage / (item.maxDamage - item.damage).toFloat()
         val totalDamage = damage * level
 
         target.damage(user.damageSources.magic(), totalDamage)
-
-        LOGGER.debug(
-            "[{}] barbarically attacked [{}], dealing [{}] of extra damage! ([lvl {}]×[{}])",
-            user.name.string,
-            target.name.string,
-            totalDamage,
-            level,
-            damage
-        )
     }
 
     override fun canAccept(other: Enchantment): Boolean =
