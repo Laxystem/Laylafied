@@ -14,3 +14,6 @@
 
 ![Fabric](https://github.com/intergrav/devins-badges/raw/v3/assets/cozy/unsupported/fabric_vector.svg)
 ![Forge](https://github.com/intergrav/devins-badges/raw/v3/assets/cozy/unsupported/forge_vector.svg)
+
+For the list of all planned features,
+please visit [*this Google doc*](https://docs.google.com/document/d/14kt0QPlGFaYOdGzTW4jMHKIfCr13WFUZEV7r-3NGRwg/edit#heading=h.hf2gj08qiftg).
