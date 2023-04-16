@@ -1,5 +1,6 @@
 @file:JvmName("Utilities")
 @file:JvmMultifileClass
+@file:Suppress("unused")
 
 package io.github.laylameower.laylafied.utils
 

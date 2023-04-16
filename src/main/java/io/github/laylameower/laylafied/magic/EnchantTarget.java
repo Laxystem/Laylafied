@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 /**
  * It's Java for fun. Just kidding, for simpler compatibility.
  */
+@SuppressWarnings("unused")
 public interface EnchantTarget {
 	boolean isAcceptableItem(Item item);
 

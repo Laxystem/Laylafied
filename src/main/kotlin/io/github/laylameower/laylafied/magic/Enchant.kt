@@ -1,3 +1,6 @@
+@file:Suppress("unused")
+
+
 package io.github.laylameower.laylafied.magic
 
 import net.minecraft.enchantment.Enchantment
