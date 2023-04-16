@@ -99,7 +99,7 @@ java {
 modrinth {
     token.set(System.getenv("MODRINTH_TOKEN"))
     projectId.set(modID)
-    versionNumber.set(version)
+    versionNumber.set(version.substringBefore('+'))
     versionType.set(System.getenv("MODRINTH_TYPE"))
     uploadFile.set(tasks.remapJar)
     gameVersions.add("1.19.4")
