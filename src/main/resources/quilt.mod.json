@@ -11,15 +11,18 @@
 				"Layla_#5790": "Developer"
 			},
 			"contact": {
-				"homepage": "https://laylameower.github.io/",
-				"issues": "https://github.com/LaylaMeower/Laylafied/issues",
+				"homepage": "https://laylameower.github.io/Laylafied/",
+				"issues": "https://github.com/LaylaMeower/Laylafied/issues/",
 				"sources": "https://github.com/LaylaMeower/Laylafied/"
 			},
-			"icon": "assets/laylafied/icon.png"
+			"icon": "assets/laylafied/icon.gif"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.github.laylameower.laylafied.LaylafiedMod"
+			"init": {
+				"adapter": "kotlin",
+				"value": "io.github.laylameower.laylafied.LaylafiedMod"
+			}
 		},
 		"depends": [
 			{
@@ -29,6 +32,10 @@
 			{
 				"id": "quilted_fabric_api",
 				"versions": ">=5.0.0-"
+			},
+			{
+				"id": "qkl",
+				"versions": ">=2.0.1"
 			},
 			{
 				"id": "minecraft",
@@ -46,6 +53,11 @@
 		"injected_interfaces": {
 			"net/minecraft/class_1887": ["io/github/laylameower/laylafied/utils/injected/interfaces/MixinEnchant"],
 			"net/minecraft/class_1886": ["io/github/laylameower/laylafied/utils/injected/interfaces/MixinEnchantTarget"]
+		}
+	},
+	"modmenu": {
+		"links": {
+			"modmenu.discord": "https://discord.gg/z9N5n5ztbQ"
 		}
 	}
 }

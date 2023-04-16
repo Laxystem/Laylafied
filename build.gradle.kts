@@ -7,9 +7,10 @@ plugins {
     java
     `maven-publish`
 
-    alias(libs.plugins.lombok)
-    alias(libs.plugins.quilt.loom)
     alias(libs.plugins.kotlin)
+    alias(libs.plugins.quilt.loom)
+    alias(libs.plugins.lombok)
+    alias(libs.plugins.minotaur)
 }
 
 val modID = project.properties["archives_base_name"].toString()
@@ -31,6 +32,7 @@ dependencies {
 
     modImplementation(libs.quilt.loader)
 
+    modImplementation(libs.quilt.kotlin.libaries)
     modImplementation(libs.quilted.fabric.api)
 
     modImplementation(libs.mod.menu)
@@ -94,6 +96,24 @@ java {
     withJavadocJar()
 }
 
+modrinth {
+    token.set(System.getenv("MODRINTH_TOKEN"))
+    projectId.set(modID)
+    versionNumber.set(version)
+    versionType.set(System.getenv("MODRINTH_TYPE"))
+    uploadFile.set(tasks.remapJar)
+    gameVersions.add("1.19.4")
+    loaders.add("quilt")
+
+    dependencies {
+        required.version("qkl", libs.versions.quilt.kotlin.libraries.get())
+        required.version("qsl", libs.versions.quilted.fabric.api.get())
+        optional.version("modmenu", libs.versions.mod.menu.get())
+    }
+
+    autoAddDependsOn.set(true)
+    syncBodyFrom.set(rootProject.file("README.md").readText())
+}
 
 val JavaVersion.asInt: Int
     get() = ordinal + 1

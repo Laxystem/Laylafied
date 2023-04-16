@@ -25,14 +25,14 @@ fun defaultMixinImplementation(): IllegalStateException = IllegalStateException(
 fun createItem(settingsChanger: QuiltItemSettings.() -> QuiltItemSettings) = Item(settingsChanger(QuiltItemSettings()))
 
 @Contract("_,_,_ -> param3")
-fun <T> register(registry: Registry<in T>?, identifier: String?, instance: T): T {
+fun <T> quickRegister(registry: Registry<in T>, identifier: String, instance: T): T {
     register(registry, Identifier(LaylafiedMod.MOD_ID, identifier), instance)
     return instance
 }
 
 @Contract("_,_ -> param2")
-fun <T : Enchantment?> register(identifier: String?, instance: T): T =
-    register(Registries.ENCHANTMENT, identifier, instance)
+fun <T : Enchantment?> register(identifier: String, instance: T): T =
+    quickRegister(Registries.ENCHANTMENT, identifier, instance)
 
 fun <T : Item?> register(identifier: String?, instance: T): T = register(Registries.ITEM, identifier, instance)
 
