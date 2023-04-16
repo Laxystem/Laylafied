@@ -1,25 +1,25 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "io.github.laylameower",
+		"id": "laylafied",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
-			"description": "A short description of your mod.",
+			"name": "Laylafied",
+			"description": "All the not-so-bad ideas Layla thinks of.",
 			"contributors": {
-				"Your name here": "Owner"
+				"Layla_#5790": "Developer"
 			},
 			"contact": {
-				"homepage": "https://example.com/",
-				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
-				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+				"homepage": "https://laylameower.github.io/",
+				"issues": "https://github.com/LaylaMeower/Laylafied/issues",
+				"sources": "https://github.com/LaylaMeower/Laylafied/"
 			},
-			"icon": "assets/example_mod/icon.png"
+			"icon": "assets/laylafied/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "io.github.laylameower.laylafied.LaylafiedMod"
 		},
 		"depends": [
 			{
@@ -32,9 +32,20 @@
 			},
 			{
 				"id": "minecraft",
-				"versions": ">=1.19.3"
+				"versions": ">=1.19.4"
+			},
+			{
+				"id": "mod_menu",
+				"versions": ">=6.1.0",
+				"optional": true
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json"
+	"mixin": "laylafied.mixins.json",
+	"quilt_loom": {
+		"injected_interfaces": {
+			"net/minecraft/class_1887": ["io/github/laylameower/laylafied/utils/injected/interfaces/MixinEnchant"],
+			"net/minecraft/class_1886": ["io/github/laylameower/laylafied/utils/injected/interfaces/MixinEnchantTarget"]
+		}
+	}
 }
