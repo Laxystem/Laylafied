@@ -112,8 +112,6 @@ modrinth {
     }
 
     syncBodyFrom.set(rootProject.file("README.md").readText())
-
-    debugMode.set(true)
 }
 
 publishing {

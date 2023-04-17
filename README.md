@@ -24,3 +24,18 @@
 
 For the list of all *planned* features,
 please visit [*this Google doc*](https://docs.google.com/document/d/14kt0QPlGFaYOdGzTW4jMHKIfCr13WFUZEV7r-3NGRwg/edit#heading=h.hf2gj08qiftg).
+
+## Using as a dependency
+```kotlin
+/* build.gradle.kts */
+dependencies {
+    modImplementation("io.github.laylameower:Laylafied:${version}")
+}
+
+repositories {
+    maven {
+        name = "Laylafied"
+        url = uri("https://maven.pkg.github.com/LaylaMeower/Laylafied")
+    }
+}
+```
