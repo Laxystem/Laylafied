@@ -19,8 +19,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'openjdk'
+          distribution: 'oracle'
 
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
 
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
@@ -31,12 +34,14 @@ jobs:
         run: ./gradlew modrinth modrinthSyncBody
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-          MODRINTH_TYPE: ${{ secrets.RELEASE_TYPE }}
+          MODRINTH_TYPE: ${{ vars.RELEASE_TYPE }}
 
       - name: Publish to Github Packages
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: publish
         env:
-          USERNAME: ${{ github.actor }}
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OSS_USERNAME: ${{ secrets.OSS_USERNAME }}
+          OSS_PASSWORD: ${{ secrets.OSS_PASSWORD }}
