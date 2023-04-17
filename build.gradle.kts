@@ -116,5 +116,19 @@ modrinth {
     debugMode.set(true)
 }
 
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/LaylaMeower/Laylafied")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+
+}
+
 val JavaVersion.asInt: Int
     get() = ordinal + 1
