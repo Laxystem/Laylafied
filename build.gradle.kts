@@ -127,7 +127,7 @@ publishing {
         }
     }
     publications {
-        register<MavenPublication>("gpr") {
+        register<MavenPublication>("io.github.LaylamMower.Laylafied") {
             from(components["java"])
         }
     }
