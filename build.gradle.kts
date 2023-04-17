@@ -127,8 +127,10 @@ publishing {
         }
     }
     publications {
-        register<MavenPublication>("io.github.LaylaMeower.Laylafied") {
+        register<MavenPublication>("Laylafied") {
             from(components["java"])
+            groupId = group
+            artifactId = modID
         }
     }
 }
