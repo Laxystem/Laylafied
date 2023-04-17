@@ -112,6 +112,7 @@ modrinth {
     }
 
     syncBodyFrom.set(rootProject.file("README.md").readText())
+    debugMode.set(true)
 }
 
 publishing {
@@ -123,6 +124,11 @@ publishing {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
             }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
         }
     }
 }
