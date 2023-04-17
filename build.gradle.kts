@@ -112,6 +112,8 @@ modrinth {
     }
 
     syncBodyFrom.set(rootProject.file("README.md").readText())
+
+    debugMode.set(true)
 }
 
 val JavaVersion.asInt: Int
