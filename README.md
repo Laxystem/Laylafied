@@ -33,9 +33,6 @@ dependencies {
 }
 
 repositories {
-    maven {
-        name = "Laylafied"
-        url = uri("https://maven.pkg.github.com/LaylaMeower/Laylafied")
-    }
+    mavenCentral()
 }
 ```

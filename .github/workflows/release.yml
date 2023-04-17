@@ -43,3 +43,5 @@ jobs:
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OSS_USERNAME: ${{ secrets.OSS_USERNAME }}
+          OSS_PASSWORD: ${{ secrets.OSS_PASSWORD }}

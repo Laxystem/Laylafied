@@ -125,7 +125,6 @@ publishing {
             }
         }
     }
-
 }
 
 val JavaVersion.asInt: Int
